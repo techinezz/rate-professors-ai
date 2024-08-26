@@ -53,7 +53,7 @@ const ChatInterface = () => {
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter the names of the professors..."
+          placeholder="Enter the names of the professors...(ex: John Doe at NYU, Jane Smith at NYU)"
           style={{ width: '800px' }}
           className="text-area resize-none p-2 h-12 border-2 border-transparent rounded-md"
         />
