@@ -48,44 +48,41 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="chat-container">
-      <form onSubmit={handleSubmit}>
+    <div className="chat-container flex flex-col items-center mt-8"> {/* Set up a flex column layout */}
+      <form onSubmit={handleSubmit} className="flex items-center mb-8"> {/* Add margin-bottom to create space below */}
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter the names of the professors..."
-          className="text-area"
+          style={{ width: '800px' }}
+          className="text-area resize-none p-2 h-12 border-2 border-transparent rounded-md"
         />
-        <button type="submit" className="submit-button">
+        <button type="submit" className="submit-button ml-2 p-2 h-12 bg-black text-white rounded-md">
           Submit
         </button>
       </form>
-      <div className="professors-container flex flex-wrap gap-4">
+      <div className="professors-container flex gap-4 justify-center flex-wrap">
         {professorsData.map((professor, index) => (
-          <MagicCard
-            key={index}
-            className="cursor-pointer flex-col items-center justify-center shadow-2xl p-4 text-center"
-            gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-          >
-            <h3 className="text-2xl font-bold">{professor.name}</h3>
-            <p className="text-lg italic mb-4">{professor.description}</p>
-            <h4 className="font-semibold">Pros:</h4>
-            <ul className="list-disc text-left">
+          <div key={index} className="professor-box">
+            <h3>{professor.name}</h3>
+            <p>{professor.description}</p>
+            <h4>Pros:</h4>
+            <ul>
               {professor.pros.map((pro: string, idx: number) => (
                 <li key={idx}>{pro}</li>
               ))}
             </ul>
             {professor.cons.length > 0 && (
               <>
-                <h4 className="font-semibold mt-2">Cons:</h4>
-                <ul className="list-disc text-left">
+                <h4>Cons:</h4>
+                <ul>
                   {professor.cons.map((con: string, idx: number) => (
                     <li key={idx}>{con}</li>
                   ))}
                 </ul>
               </>
             )}
-          </MagicCard>
+          </div>
         ))}
       </div>
     </div>
@@ -93,3 +90,6 @@ const ChatInterface = () => {
 };
 
 export default ChatInterface;
+
+
+
