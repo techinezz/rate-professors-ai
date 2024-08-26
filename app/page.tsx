@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { ShineBorderDemo } from "./banner/page";
+import ShineBorderPage from "./banner/page";
 import ChatInterface from "./ChatInterface";
 import Ripple from "@/components/magicui/ripple";
 
@@ -14,7 +14,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <ShineBorderDemo />
+        <ShineBorderPage />
         <ChatInterface />
       </div>
     </main>

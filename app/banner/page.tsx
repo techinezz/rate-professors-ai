@@ -1,6 +1,6 @@
 import ShineBorder from "@/components/magicui/shine-border";
 
-export function ShineBorderDemo() {
+const ShineBorderPage = () => {
   return (
     <ShineBorder
       className="relative flex h-[300px] w-[1200px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
@@ -13,3 +13,5 @@ export function ShineBorderDemo() {
   );
 }
 
+
+export default ShineBorderPage;
